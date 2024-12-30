@@ -17,8 +17,30 @@ def is_enabled(value, default):
     else:
         return default
 
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363 -1002296355008').split()] # give channel id with seperate space. Ex : ('-10073828 -102782829 -1007282828')
-        
+# AUTH_CHANNEL Configuration
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002245813234 -1002043502363 -1002296355008').split()]
+
+# Function to Check and Apply Join Mode
+def get_channel_mode(channel_id):
+    if str(channel_id) == '-1002296355008':  # Replace with the specific channel ID for 'Request to Join'
+        return "request_to_join"
+    else:
+        return "direct_join"
+
+# Function to Generate Join Link
+def generate_join_link(channel_id):
+    join_mode = get_channel_mode(channel_id)
+    if join_mode == "request_to_join":
+        return f"https://t.me/{channel_id}?join_request=1"
+    else:
+        return f"https://t.me/{channel_id}"
+
+# Example Usage (Optional)
+if __name__ == "__main__":
+    for channel in AUTH_CHANNEL:
+        join_mode = get_channel_mode(channel)
+        join_link = generate_join_link(channel)
+        print(f"Channel {channel}: Mode - {join_mode}, Link - {join_link}")
 # Bot Information
 API_ID = int(environ.get("API_ID", "25425840"))
 API_HASH = environ.get("API_HASH", "e6ea2eca4aa38e965511f323e5ffa578")
