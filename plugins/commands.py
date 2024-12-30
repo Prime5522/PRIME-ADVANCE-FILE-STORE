@@ -26,9 +26,9 @@ async def is_subscribed(bot, query, channel):
         except UserNotParticipant:
             # যদি ইউজার চ্যানেলে সদস্য না হন, তবে যোগদান লিঙ্ক পাঠানো হবে
             if id == AUTH_CHANNEL:
-                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/{id}?join_request=1")])
+                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/+GIbddfnAuAxlMTdl?join_request=1")])
             else:
-                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/{id}")])
+                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/+ooF3xF7SVJlkYzRl")])
         except Exception as e:
             pass
     return btn
