@@ -18,7 +18,7 @@ def is_enabled(value, default):
         return default
 
 # AUTH_CHANNEL Configuration
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', 'Prime_Movies4U Prime_Botz +DnOsTWqbm8hjYmQ1').split()]
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002043502363 -1002245813234 -1002082665507').split()]
 
 # Function to Check and Apply Join Mode
 def get_channel_mode(channel_id):
