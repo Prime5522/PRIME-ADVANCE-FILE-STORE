@@ -1,39 +1,61 @@
+# Ask Doubt on telegram @KingVJ01
+
 import os
 import logging
 import random
-from pyrogram import Client, filters, enums
-from pyrogram.types import *
-from pyrogram.errors import *
-from config import AUTH_CHANNEL, LOG_CHANNEL, PICS
+import asyncio
+from validators import domain
+from Script import script
 from plugins.dbusers import db
+from pyrogram import Client, filters, enums
+from plugins.users_api import get_user, update_user_info
 from plugins.database import get_file_details
+from pyrogram.errors import *
+from pyrogram.types import *
+from utils import verify_user, check_token, check_verification, get_token
+from config import *
+import re
+import json
+import base64
+from urllib.parse import quote_plus
 from TechVJ.utils.file_properties import get_name, get_hash, get_media_file_size
-
 logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-# ফাংশনটি চেক করবে যে ইউজার চ্যানেলে যোগদান করেছেন কিনা
 async def is_subscribed(bot, query, channel):
     btn = []
     for id in channel:
         chat = await bot.get_chat(int(id))
         try:
-            # চেক করা হচ্ছে যদি ইউজার চ্যানেলে সদস্য হন
             await bot.get_chat_member(id, query.from_user.id)
-            if id == AUTH_CHANNEL:  # একমাত্র চ্যানেল যেখানে request_to_join
-                continue  # এই চ্যানেলে রিকুয়েস্ট টু জয়েন এর প্রয়োজন নেই
         except UserNotParticipant:
-            # যদি ইউজার চ্যানেলে সদস্য না হন, তবে যোগদান লিঙ্ক পাঠানো হবে
-            if id == AUTH_CHANNEL:
-                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/+GIbddfnAuAxlMTdl?join_request=1")])
-            else:
-                btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=f"https://t.me/+ooF3xF7SVJlkYzRl")])
+            btn.append([InlineKeyboardButton(f'✇ Jᴏɪɴ Oᴜʀ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ ✇', url=chat.invite_link)])
         except Exception as e:
             pass
     return btn
 
-# 'start' কমান্ডটি যখন আসবে
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
+
+def get_size(size):
+    """Get size in readable format"""
+
+    units = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB"]
+    size = float(size)
+    i = 0
+    while size >= 1024.0 and i < len(units):
+        i += 1
+        size /= 1024.0
+    return "%.2f %s" % (size, units[i])
+
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ0
+
+
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     await message.react(emoji="🔥", big=True)
@@ -65,7 +87,7 @@ async def start(client, message):
     username = (await client.get_me()).username
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
-        await client.send_message(LOG_CHANNEL, f"New user: {message.from_user.id}, {message.from_user.mention}")
+        await client.send_message(LOG_CHANNEL, script.LOG_TEXT.format(message.from_user.id, message.from_user.mention))
     
     if len(message.command) != 2:
         buttons = [[
@@ -77,14 +99,13 @@ async def start(client, message):
             InlineKeyboardButton('🧑‍🏭 ʜᴇʟᴘ 🧑‍🏭', callback_data='help'),
             InlineKeyboardButton('❤️‍🔥 𝙰𝙱𝙾𝚄𝚃 ❤️‍🔥', callback_data='about')
         ]]
-        # যদি ক্লোন মোড অ্যাকটিভ থাকে, ক্লোন বাটন যোগ হবে
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('👨‍💻 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ 👨‍💻', callback_data='clone')])
         reply_markup = InlineKeyboardMarkup(buttons)
         me2 = (await client.get_me()).mention
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=f"Hello {message.from_user.mention}, I'm {me2}, your bot! Use the buttons below to interact with me.",
+            caption=script.START_TXT.format(message.from_user.mention, me2),
             reply_markup=reply_markup
         )
         return
