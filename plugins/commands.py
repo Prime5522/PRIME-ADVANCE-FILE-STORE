@@ -93,11 +93,13 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('💝 ᴘʀɪᴍᴇ ʙᴏᴛz sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ❤️‍🔥', url='https://t.me/Prime_Botz_Support')
             ],[
-            InlineKeyboardButton('🔥 𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓`𝐒 🔥', url='https://t.me/Prime_Botz'),
-            InlineKeyboardButton('✨ 𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄 ✨', url='https://t.me/Prime_Movies4U')
+            InlineKeyboardButton('🔥 ᴘʀɪᴍᴇ ʙᴏᴛᴢ 🔥', url='https://t.me/Prime_Botz'),
+            InlineKeyboardButton('✨ ᴘʀɪᴍᴇ ᴍᴏᴠɪᴇs ✨', url='https://t.me/Prime_Movies4U')
             ],[
             InlineKeyboardButton('🧑‍🏭 ʜᴇʟᴘ 🧑‍🏭', callback_data='help'),
             InlineKeyboardButton('❤️‍🔥 𝙰𝙱𝙾𝚄𝚃 ❤️‍🔥', callback_data='about')
+            ],[
+            InlineKeyboardButton('☆ 💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫☆ ', url='https://t.me/MR_PRIME_SUPREME'),        
         ]]
         if CLONE_MODE == True:
             buttons.append([InlineKeyboardButton('👨‍💻 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ 👨‍💻', callback_data='clone')])
@@ -447,13 +449,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('💝 ᴘʀɪᴍᴇ ʙᴏᴛz sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ ❤️‍🔥', url='https://t.me/Prime_Botz_Support')
             ],[
-            InlineKeyboardButton('🔥 𝐏𝐑𝐈𝐌𝐄 𝐁𝐎𝐓`𝐒 🔥', url='https://t.me/Prime_Botz'),
-            InlineKeyboardButton('✨ 𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄 ✨', url='https://t.me/Prime_Movies4U')
-            ],[
-            InlineKeyboardButton('👨‍💻 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ 👨‍💻', callback_data='clone')
+            InlineKeyboardButton('🔥 ᴘʀɪᴍᴇ ʙᴏᴛᴢ 🔥', url='https://t.me/Prime_Botz'),
+            InlineKeyboardButton('✨ ᴘʀɪᴍᴇ ᴍᴏᴠɪᴇs ✨', url='https://t.me/Prime_Movies4U')
             ],[
             InlineKeyboardButton('🧑‍🏭 ʜᴇʟᴘ 🧑‍🏭', callback_data='help'),
             InlineKeyboardButton('❤️‍🔥 𝙰𝙱𝙾𝚄𝚃 ❤️‍🔥', callback_data='about')
+            ],[
+            InlineKeyboardButton('☆ 💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫☆ ', url='https://t.me/MR_PRIME_SUPREME'),        
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
