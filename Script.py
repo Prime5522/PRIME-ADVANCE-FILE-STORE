@@ -13,11 +13,15 @@ class script(object):
 # Ask Doubt on telegram @KingVJ01
 
     
-    CAPTION = """<b>📂 ғɪʟᴇɴᴀᴍᴇ : {file_name}
-
+    CAPTION = """📂 <b>Filename:</b> <a href='https://t.me/Prime_Movies4U'>{file_name}</a>
 sɪᴢᴇ ⚙️: {file_size}
+•────•────✦✗✦───•────•
+📌 <b>ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ :➠</b> <a href='https://t.me/Prime_Movies4U/143'>🔗 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ✨</a>
+🎬 <b>ᴍᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ :➠</b> <a href='https://t.me/Prime_Movies4U/153'>🔗 ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴊᴏɪɴ ♨️</a>
+•────•────✦✗✦───•────•
 
-⚡ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ [ᴘʀɪᴍᴇ ʙᴏᴛᴢ](https://t.me/Prime_Botz)</b>""" 
+<b>©️ ᴘᴏᴡᴇʀᴇᴅ ʙʏ :</b> <a href='https://t.me/Prime_Botz'>ᴘʀɪᴍᴇ ʙᴏᴛᴢ</a>
+"""
 
 # Don't Remove Credit Tg - @VJ_Botz
 # Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
@@ -47,19 +51,27 @@ If You Want To Remove Api Then Copy This And Send To Bot - `/api None`"""
 
     ABOUT_TXT = """<b>ʜɪ ɪ ᴀᴍ ᴘᴇʀᴍᴀɴᴇɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡɪᴛʜ ᴄʟᴏɴᴇ ғᴇᴀᴛᴜʀᴇ + ᴄᴜsᴛᴏᴍ ᴜʀʟ sʜᴏʀᴛɴᴇʀ ɪᴛ ᴍᴇᴀɴs ᴀɴʏ ᴜsᴇʀ ᴄᴀɴ sᴇᴛ ʜɪs ᴜʀʟ sʜᴏʀᴛɴᴇʀ ᴀɴᴅ + ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ.
 
-🤖 ᴍʏ ɴᴀᴍᴇ: {}
+🤖 <b>My Name:</b> {}  
 
-⍟ 𝙼𝙰𝙸𝙽 𝙼𝙾𝚅𝙸𝙴 𝙲𝙷𝙰𝙽𝙽𝙴𝙻: <a href=https://t.me/Prime_Movies4U>𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄 ✨</a>
+•────•────✦✗✦───•────•
+⍟ <b>🎬 Main Movie Channel:</b>  
+<a href="https://t.me/Prime_Movies4U">✨ PRIME MOVIE ✨</a>  
 
-🌿 ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href=https://t.me/Prime_Botz>ᴘʀɪᴍᴇ ʙᴏᴛᴢ ✨</a>
+🌿 <b>Maintained By:</b>  
+<a href="https://t.me/Prime_Botz">ᴘʀɪᴍᴇ ʙᴏᴛᴢ ✨</a>  
 
-⍟ 𝙼𝙾𝚅𝙸𝙴𝚂 𝚁𝙴𝚀𝚄𝙴𝚂𝚃 𝙶𝚁𝙾𝚄𝙿: <a href=https://t.me/Prime_Movies4U/143>𝐏𝐑𝐈𝐌𝐄 𝐌𝐎𝐕𝐈𝐄𝐒 𝐑𝐄𝐐𝐔𝐄𝐒𝐓 𝐆𝐑𝐎𝐔𝐏</a>
+⍟ <b>🎥 Movie Request Group:</b>  
+<a href="https://t.me/Prime_Movies4U/143">🔗 PRIME MOVIES REQUEST GROUP</a>  
 
-🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ: <a href=https://t.me/Prime_Nayem>ᴍʀ.ᴘʀɪᴍᴇ</a>
+🧑🏻‍💻 <b>Developer:</b>  
+<a href="https://t.me/Prime_Nayem">⭐ ᴍʀ.ᴘʀɪᴍᴇ ⭐</a>  
 
-👥 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 : <a href=https://t.me/Prime_Botz_Support>ᴘʀɪᴍᴇ ʙᴏᴛ'ꜱ sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ</a>
+👥 <b>Support:</b>  
+<a href="https://t.me/Prime_Botz_Support">⚡ PRIME BOT'S SUPPORT GROUP ⚡</a>  
 
-📢 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ: <a href=https://t.me/Prime_Movies4U>Prime 𝐔𝐩𝐝𝐚𝐭𝐞</a></b>
+📢 <b>Update Channel:</b>  
+<a href="https://t.me/Prime_Movies4U">🚀 PRIME UPDATES 🚀</a>  
+•────•────✦✗✦───•────•
 """
 
     CABOUT_TXT = """<b>ʜɪ ɪ ᴀᴍ ᴘᴇʀᴍᴀɴᴇɴᴛ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴡɪᴛʜ ᴄʟᴏɴᴇ ғᴇᴀᴛᴜʀᴇ + ᴄᴜsᴛᴏᴍ ᴜʀʟ sʜᴏʀᴛɴᴇʀ ɪᴛ ᴍᴇᴀɴs ᴀɴʏ ᴜsᴇʀ ᴄᴀɴ sᴇᴛ ʜɪs ᴜʀʟ sʜᴏʀᴛɴᴇʀ ᴀɴᴅ + ᴀᴜᴛᴏ ᴅᴇʟᴇᴛᴇ.
