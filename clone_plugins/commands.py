@@ -52,12 +52,15 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-            ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
             ],[
-            InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ 🔻', callback_data='about')
+            InlineKeyboardButton('🔥 ᴘʀɪᴍᴇ ʙᴏᴛᴢ 🔥', url='https://t.me/Prime_Botz'),
+            InlineKeyboardButton('✨ ᴘʀɪᴍᴇ ᴍᴏᴠɪᴇs ✨', url='https://t.me/Prime_Movies4U')
+            ],[
+            InlineKeyboardButton('🧑‍🏭 ʜᴇʟᴘ 🧑‍🏭', callback_data='help'),
+            InlineKeyboardButton('❤️‍🔥 𝙰𝙱𝙾𝚄𝚃 ❤️‍🔥', callback_data='about')
+            ],[
+            InlineKeyboardButton('☆ 💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫☆ ', url='https://t.me/MR_PRIME_SUPREME'),        
         ]]
         me2 = (await client.get_me()).mention
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -180,12 +183,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.delete()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-            ],[
             InlineKeyboardButton('🤖 ᴄʀᴇᴀᴛᴇ ʏᴏᴜʀ ᴏᴡɴ ᴄʟᴏɴᴇ ʙᴏᴛ', url=f'https://t.me/{BOT_USERNAME}?start=clone')
             ],[
-            InlineKeyboardButton('💁‍♀️ ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ 🔻', callback_data='about')
+            InlineKeyboardButton('🔥 ᴘʀɪᴍᴇ ʙᴏᴛᴢ 🔥', url='https://t.me/Prime_Botz'),
+            InlineKeyboardButton('✨ ᴘʀɪᴍᴇ ᴍᴏᴠɪᴇs ✨', url='https://t.me/Prime_Movies4U')
+            ],[
+            InlineKeyboardButton('🧑‍🏭 ʜᴇʟᴘ 🧑‍🏭', callback_data='help'),
+            InlineKeyboardButton('❤️‍🔥 𝙰𝙱𝙾𝚄𝚃 ❤️‍🔥', callback_data='about')
+            ],[
+            InlineKeyboardButton('☆ 💫 𝗖𝗥𝗘𝗔𝗧𝗢𝗥 💫☆ ', url='https://t.me/MR_PRIME_SUPREME'),        
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
