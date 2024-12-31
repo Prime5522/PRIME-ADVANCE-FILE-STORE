@@ -18,11 +18,11 @@ def is_enabled(value, default):
         return default
 
 # AUTH_CHANNEL Configuration
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002043502363 -1002245813234 -1002296355008').split()]
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002043502363 -1002245813234').split()]
 
 # Function to Check and Apply Join Mode
 def get_channel_mode(channel_id):
-    if str(channel_id) == '-1002296355008':  # Replace with the specific channel ID for 'Request to Join'
+    if str(channel_id) == '-1002245813234':  # Replace with the specific channel ID for 'Request to Join'
         return "request_to_join"
     else:
         return "direct_join"
@@ -66,8 +66,8 @@ DB_NAME = environ.get("DB_NAME", "PrimeBotx")
 AUTO_DELETE_MODE = bool(environ.get('AUTO_DELETE_MODE', True)) # Set True or False
 
 # If Auto Delete Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
-AUTO_DELETE = int(environ.get("AUTO_DELETE", "20")) # Time in Minutes
-AUTO_DELETE_TIME = int(environ.get("AUTO_DELETE_TIME", "1800")) # Time in Seconds
+AUTO_DELETE = int(environ.get("AUTO_DELETE", "5")) # Time in Minutes
+AUTO_DELETE_TIME = int(environ.get("AUTO_DELETE_TIME", "300")) # Time in Seconds
 
 # Channel Information
 LOG_CHANNEL = int(environ.get("LOG_CHANNEL", "-1002184630716"))
@@ -88,7 +88,7 @@ SHORTLINK_API = environ.get("SHORTLINK_API", "hRPS5vvZc0OGOEUQJMJzPiojoVK2") # s
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/How_To_Open_Linkl") # how to open link 
 
 # Website Info:
-WEBSITE_URL_MODE = bool(environ.get('WEBSITE_URL_MODE', False)) # Set True or False
+WEBSITE_URL_MODE = bool(environ.get('WEBSITE_URL_MODE', True)) # Set True or False
 
 # If Website Url Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
 WEBSITE_URL = environ.get("WEBSITE_URL", "https://primehub1.blogspot.com/2024/10/prime.html") # For More Information Check Video On Yt - @Tech_VJ
