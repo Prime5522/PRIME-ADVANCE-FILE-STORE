@@ -9,50 +9,22 @@ from os import environ
 from Script import script
 
 id_pattern = re.compile(r'^.\d+$')
-def is_enabled(value, default):
-    if value.lower() in ["true", "yes", "1", "enable", "y"]:
-        return True
-    elif value.lower() in ["false", "no", "0", "disable", "n"]:
-        return False
-    else:
-        return default
 
 # AUTH_CHANNEL Configuration
-AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002043502363 -1002245813234').split()]
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002245813234').split()]
 
-# Function to Check and Apply Join Mode
-def get_channel_mode(channel_id):
-    if str(channel_id) == '-1002245813234':  # Replace with the specific channel ID for 'Request to Join'
-        return "request_to_join"
-    else:
-        return "direct_join"
-
-# Function to Generate Join Link
-def generate_join_link(channel_id):
-    join_mode = get_channel_mode(channel_id)
-    if join_mode == "request_to_join":
-        return f"https://t.me/{channel_id}?join_request=1"
-    else:
-        return f"https://t.me/{channel_id}"
-
-# Example Usage (Optional)
-if __name__ == "__main__":
-    for channel in AUTH_CHANNEL:
-        join_mode = get_channel_mode(channel)
-        join_link = generate_join_link(channel)
-        print(f"Channel {channel}: Mode - {join_mode}, Link - {join_link}")
 # Bot Information
 API_ID = int(environ.get("API_ID", "25425840"))
 API_HASH = environ.get("API_HASH", "e6ea2eca4aa38e965511f323e5ffa578")
 BOT_TOKEN = environ.get("BOT_TOKEN", "")
 
-PICS = (environ.get('PICS', 'https://envs.sh/1fu.jpg')).split() # Bot Start Picture
+PICS = (environ.get('PICS', 'https://i.postimg.cc/7Zpf9s1C/IMG-20250514-223544-954.jpg')).split() # Bot Start Picture
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7057105056').split()]
 BOT_USERNAME = environ.get("BOT_USERNAME", "Prime_Movies_Store_Robot") # without @
 PORT = environ.get("PORT", "8080")
 
 # Clone Info :-
-CLONE_MODE = bool(environ.get('CLONE_MODE', True)) # Set True or False
+CLONE_MODE = bool(environ.get('CLONE_MODE', False)) # Set True or False
 
 # If Clone Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
 CLONE_DB_URI = environ.get("CLONE_DB_URI", "mongodb+srv://vogaje4812:zSXRd584CxoK8wEQ@cluster0.tnwxw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -88,7 +60,7 @@ SHORTLINK_API = environ.get("SHORTLINK_API", "hRPS5vvZc0OGOEUQJMJzPiojoVK2") # s
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/How_To_Open_Linkl") # how to open link 
 
 # Website Info:
-WEBSITE_URL_MODE = bool(environ.get('WEBSITE_URL_MODE', True)) # Set True or False
+WEBSITE_URL_MODE = bool(environ.get('WEBSITE_URL_MODE', False)) # Set True or False
 
 # If Website Url Mode Is True Then Fill All Required Variable, If False Then Don't Fill.
 WEBSITE_URL = environ.get("WEBSITE_URL", "https://primehub1.blogspot.com/2024/10/prime.html") # For More Information Check Video On Yt - @Tech_VJ
